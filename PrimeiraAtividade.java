@@ -147,18 +147,56 @@ public class Lista01 {
   }
 
   static void questao12() {
-    
-  }
+     String frase = "Aula de POO";
+
+        
+        int contador = 0;
+
+        
+        for (int i = 0; i < frase.length(); i++) {
+            char c = frase.charAt(i);
+            if (c == 'a' || c == 'A') {
+                contador++;
+            }
+        }
+
+        
+        System.out.println("A letra 'a' aparece " + contador + " vezes na frase.");
+    }
+  
 
   static void questao13() {
-  }
+    int[] numeros = {3, 7, 10, 15, 20};  
+        int numeroVerificar = 10;        
+        boolean encontrado = false;
+
+        for (int num : numeros) {            
+            if (num == numeroVerificar) {
+                encontrado = true;
+                break;                        
+            }
+        }
+
+        System.out.println(encontrado ? "O número está no array." : "O número não está no array.");
+    }
 
   static void questao14() {
-  }
+    double[] notas = {8.5, 7.0, 9.5, 6.0, 10.0};
+        double soma = 0;
+
+        for (double nota : notas) {
+            soma += nota;
+        }
+    
+        double media = soma / notas.length;
+
+        System.out.println("Soma total: " + soma);
+        System.out.println("Média final: " + media);
+    }
+
 
   static void questao15() {
-  }
-
+}
   static void questao16() {
   }
 }
