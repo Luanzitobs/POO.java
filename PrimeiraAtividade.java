@@ -1,10 +1,13 @@
+
+package aula2;
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class Lista01 {
   static Scanner sc = new Scanner(System.in);
 
   public static void main(String[] args) {
-    System.out.print("QuestÃ£o: ");
+    System.out.print("Questão: ");
     int q = sc.nextInt();
 
     switch (q) {
@@ -24,179 +27,242 @@ public class Lista01 {
       case 14 -> questao14();
       case 15 -> questao15();
       case 16 -> questao16();
-      default -> System.out.println("QuestÃ£o invÃ¡lida");
+      default -> System.out.println("Questão inválida");
     }
   }
 
-  // QuestÃµes
-  // Desenvolva cada questÃ£o dentro dos mÃ©todos a seguir
+  // Questões
+  // Desenvolva cada questão dentro dos métodos a seguir
   static void questao1() {
-    int idade = 25;
-        if (idade > 18) {
-          System.out.println("É maior de idade");
-        } else {
-          System.out.println("É menor de idade");
-        }
-      }
-  
 
+    int idade = 17;
+
+    if(idade >= 18){
+      System.out.println("Maior.");
+    } else {
+      System.out.println("Menor.");
+    }
+
+  }
 
   static void questao2() {
-    int n = 15;
-        if (n % 2 == 0) {
-          System.out.println("O Numero é par");
-        } else {
-          System.out.println("O Numero é impar");
-        }
+
+    int numero = 16;
+
+    if(numero % 2 == 0){
+      System.out.println("É par.");
+    } else {
+      System.out.println("É ímpar.");
+    }
+
   }
 
   static void questao3() {
-    int x = 12;
-    int y = 11;
-      if (x > y) {
-        System.out.println("X é maior que Y");
-      } else if (x < y) {
-        System.out.println("Y é maior que X");  
-      }else {
-        System.out.println("X e Y são iguais");
-      }
+
+    int x = 2;
+    int y = 7;
+
+    if(x > y){
+      System.out.println(x + " é maior.");
+    } else if(y > x) {
+      System.out.println(y + " é maior.");
+    } else {
+      System.out.println("Os números são iguais.");
+    }
+
   }
 
   static void questao4() {
-    int n = 21;
-     if (n < 20) {
-       System.out.println("Está frio");
-     } else {
-        System.out.println("Está quente");
-     }
+
+    int temperatura = 31;
+
+    if(temperatura < 20){
+      System.out.println("Está frio.");
+    } else {
+      System.out.println("Está quente.");
+    }
+
   }
 
   static void questao5() {
-    float nota = 6.8f;
-    if (nota >= 6.8f) {
+
+    double notaAluno = 6.5;
+
+    if(notaAluno >= 6.8){
       System.out.println("Aprovado");
     } else {
-      System.out.println("Reprovado");
+      System.out.println("Reprovado.");
     }
+
   }
 
   static void questao6() {
-    int valor = 90;
-    if (valor < 100) {
-      System.out.println(valor * 0.50);
+
+    double consumo = 33.5;
+    double total;
+
+    if(consumo <= 100){
+      total = consumo * 0.50;
     } else {
-      System.out.println(valor * 0.70);
+      total = consumo * 0.70;
     }
-    
-  
+
+    System.out.println("O valor total é: R$ " + total);
 
   }
 
   static void questao7() {
-    for (int i = 1; i <= 10; i++) {
-      System.out.println(i);
+
+    for(int i = 10; i >= 0; i--){
+      System.out.println("Contagem regressiva: " + i);
     }
+
   }
 
   static void questao8() {
-    int i = 2;
+
+    int i = 0;
     int soma = 0;
-    while (i <= 100) {
-      soma = soma + i;
-      i = i +2;
+
+    while(i <= 100){
+      if(i % 2 == 0){
+        soma += i;
+      }
+
+      i++;
     }
-    System.out.println(soma);
+
+    System.out.println("A soma dos pares entre 1 e 100 é: " + soma);
+
   }
 
   static void questao9() {
-    int x = 2;
-    for (int i = 1; i <= 10; i++) {
-      System.out.println(x + "x" + i + "=" + (x * i));
+
+    int numero = 9;
+
+    for(int i = 1; i <= 10; i++){
+      System.out.println(numero + " x " + i + " = " + (numero * i));
     }
+
   }
 
   static void questao10() {
-    int x = 5 ;
-    int divisor = 0;
 
-    for (int i = 1; i <= x; i++) {
-      if (x % i == 0) {
-        divisor++;
-      }
-    }
-    if (divisor == 2) {
-      System.out.println(x + " é um número primo");
+    int numero = 7;
+    boolean ePrimo = true;
+
+    if(numero <= 1 ){
+
+      ePrimo = false;
+
     } else {
-      System.out.println(x + " não é um número primo");
+
+      for(int i = 2; i <= numero / 2; i++){
+        if(numero % i == 0){
+          ePrimo = false;
+          break;
+        }
+      }
+
     }
+
+    if(ePrimo){
+      System.out.println("O número " + numero + " é primo");
+    } else {
+      System.out.println("O número " + numero + " não é primo");
+    }
+
+
   }
 
   static void questao11() {
-    char letra = 'a';
-    switch (letra) {
-        case 'a':
-        case 'e':
-        case 'i':
-        case 'o':
-        case 'u':
-            System.out.println("É uma vogal");
-            break;
-        default:
-            System.out.println("Não é uma vogal");
+
+    String letra = "B";
+
+    String novaLetra = letra.toLowerCase();
+
+    switch (novaLetra) {
+      case "a":
+      case "e":
+      case "i":
+      case "o":
+      case "u":
+        System.out.println("É vogal");
+        break;
+      default:
+        System.out.println("É consoante");
+        break;
     }
+
   }
 
   static void questao12() {
-     String frase = "Aula de POO";
 
-        
-        int contador = 0;
+    char palavra = 'a';
+    String frase = "Java é bom";
+    int quantidade = 0;
 
-        
-        for (int i = 0; i < frase.length(); i++) {
-            char c = frase.charAt(i);
-            if (c == 'a' || c == 'A') {
-                contador++;
-            }
-        }
+    String frasePadronizada = frase.toLowerCase();
 
-        
-        System.out.println("A letra 'a' aparece " + contador + " vezes na frase.");
+    for(int i = 0; i < frasePadronizada.length(); i++){
+      if(frasePadronizada.charAt(i) == palavra){
+        quantidade++;
+      }
     }
-  
+
+    System.out.println("A frase possui " + quantidade + " letras 'a'.");
+
+  }
 
   static void questao13() {
-    int[] numeros = {3, 7, 10, 15, 20};  
-        int numeroVerificar = 10;        
-        boolean encontrado = false;
 
-        for (int num : numeros) {            
-            if (num == numeroVerificar) {
-                encontrado = true;
-                break;                        
-            }
-        }
+    int[] interos = {2, 4, 6, 8, 12};
 
-        System.out.println(encontrado ? "O número está no array." : "O número não está no array.");
+    int numeroBuscado = 1;
+
+    for(int i = 0; i < interos.length; i++){
+      if(interos[i] == numeroBuscado){
+        System.out.println("O número " + numeroBuscado + " está presente no Array.");
+        break;
+      }
     }
+
+  }
 
   static void questao14() {
-    double[] notas = {8.5, 7.0, 9.5, 6.0, 10.0};
-        double soma = 0;
 
-        for (double nota : notas) {
-            soma += nota;
-        }
-    
-        double media = soma / notas.length;
+    double[] notas = {9.0, 7.5, 10, 6.5, 8.0};
+    double soma = 0;
 
-        System.out.println("Soma total: " + soma);
-        System.out.println("Média final: " + media);
+    for(double nota : notas){
+      soma += nota;
     }
 
+    double media = soma / notas.length;
+
+    System.out.println("A média das notas é: " + media);
+
+  }
 
   static void questao15() {
-}
+
+    String[] frutas = {"Abacate", "Maça", "Banana", "Morango"};
+
+    for(int i = 0; i < frutas.length; i++){
+      System.out.println(frutas[i]);
+    }
+
+  }
+
   static void questao16() {
+
+    String[] frutas = {"Abacate", "Maça", "Banana", "Morango"};
+
+    for(int i = 0; i < frutas.length; i++){
+      if(frutas[i].charAt(0) == 'M'){
+        System.out.println(frutas[i]);
+      }
+    }
+
   }
 }
