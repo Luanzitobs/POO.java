@@ -12,14 +12,14 @@ public class JogoDaVelha {
         boolean jogoAcabou = false;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("--- BEM-VINDO AO JOGO DA VELHA ---");
+        System.out.println("--- BEM-VINDO AO JOGO DA VELHA DO LUANZITO ---");
 
         while (!jogoAcabou) {
             exibirTabuleiro(tabuleiro);
             System.out.println("\nJogador " + jogadorAtual + ", sua vez!");
             System.out.print("Digite a LINHA (0-2) e a COLUNA (0-2) separadas por espaço: ");
 
-            
+
             if (scanner.hasNextInt()) {
                 int linha = scanner.nextInt();
                 int col = scanner.nextInt();
@@ -30,10 +30,10 @@ public class JogoDaVelha {
 
                     if (jogoAcabou) {
                         exibirTabuleiro(tabuleiro);
-                        System.out.println("\n⭐ PARABÉNS! O Jogador " + jogadorAtual + " venceu! ⭐");
+                        System.out.println("\n PARABÉNS! O Jogador " + jogadorAtual + " venceu!");
                     } else if (tabuleiroCheio(tabuleiro)) {
                         exibirTabuleiro(tabuleiro);
-                        System.out.println("\n🤝 EMPATE! Deu velha.");
+                        System.out.println("\n EMPATE! Deu velha.");
                         jogoAcabou = true;
                     } else {
                         jogadorAtual = (jogadorAtual == 'X') ? 'O' : 'X';
@@ -43,7 +43,7 @@ public class JogoDaVelha {
                 }
             } else {
                 System.out.println("\n[!] ERRO: Digite apenas números inteiros.");
-                scanner.next(); 
+                scanner.next();
             }
         }
         scanner.close();
@@ -51,10 +51,10 @@ public class JogoDaVelha {
 
     public static void exibirTabuleiro(char[][] tabuleiro) {
         System.out.println("\n    COLS");
-        System.out.println("    0   1   2"); 
+        System.out.println("    0   1   2");
         System.out.println("  -------------");
         for (int i = 0; i < 3; i++) {
-            System.out.print(i + " | "); 
+            System.out.print(i + " | ");
             for (int j = 0; j < 3; j++) {
                 System.out.print(tabuleiro[i][j] + " | ");
             }
@@ -64,11 +64,11 @@ public class JogoDaVelha {
 
     public static boolean verificarVitoria(char[][] t, char j) {
         for (int i = 0; i < 3; i++) {
-            
+
             if ((t[i][0] == j && t[i][1] == j && t[i][2] == j) ||
                     (t[0][i] == j && t[1][i] == j && t[2][i] == j)) return true;
         }
-        
+
         return (t[0][0] == j && t[1][1] == j && t[2][2] == j) ||
                 (t[0][2] == j && t[1][1] == j && t[2][0] == j);
     }
